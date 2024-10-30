@@ -41,6 +41,8 @@ The input file is expected to be a SQL file generated using `pg_dump --schema-on
 
 Postgres documentation on pg_dump options: https://www.postgresql.org/docs/current/app-pgdump.html
 
+Note: If input file is unable to be parsed, please use encoding `UTF-8` and ensure input file is not a binary file but a text/sql file.
+
 # Limitless Compatibility Assessment Tool output directory
 
 The output directory is where the assessment report will be generated. As of current version, the output directory must not exist when generating the report as the tool will check for its existence and create it.
@@ -85,4 +87,8 @@ There will be a generated assessment report in the specified output directory wi
 
 # Sample output
 
-Sample outputs can be found here: https://github.com/aws/limitless-compatibility-assessment-tool/tree/private-repo/sampleOutput
+Sample outputs can be found here: https://github.com/aws/limitless-compatibility-assessment-tool/tree/main/sampleOutput
+
+# Troubleshooting
+
+If faced with error: `Invalid SQL syntax`, please double check if there are any syntax errors and the input file is generated with `pg_dump --schema-only` and that the provided input file is not in a binary version and rather a test/sql file. If problem persists, please use `UTF-8` encoding.
