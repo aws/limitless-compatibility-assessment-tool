@@ -1,13 +1,21 @@
-# What?
+# Limitless Compatibility Assessment Tool
 
-This package is a Java library package using Gradle with the BrazilGradle build system.
+Limitless Compatibility Assessment Tool is a compatibility assessment tool for AWS Aurora Limitless Database, With Limitless Compatibility Assessment Tool, users can quickly analyze compatibility of database dump files with Limitless Database.
 
-# References
-* Gradle User Guide Command-Line Interface (options you can use with `brazil-build`): https://docs.gradle.org/current/userguide/command_line_interface.html
-* Gradle User Guide Java Plugin: https://docs.gradle.org/current/userguide/java_plugin.html
-* Gradle User Guide Checkstyle Plugin: https://docs.gradle.org/current/userguide/checkstyle_plugin.html
-* Gradle User Guide SpotBugs Plugin: http://spotbugs.readthedocs.io/en/latest/gradle.html
-* Gradle User Guide JaCoCo Plugin: https://docs.gradle.org/current/userguide/jacoco_plugin.html
-* Authoring Gradle Tasks: https://docs.gradle.org/current/userguide/more_about_tasks.html
-* BrazilGradle and IDE: https://w.amazon.com/bin/view/BrazilGradle/#ide
-* Executing tests using JUnit5 Platform: https://junit.org/junit5/docs/current/user-guide/#running-tests-build-gradle and https://docs.gradle.org/4.6/release-notes.html#junit-5-support
+## Download
+
+Download an executable version here: https://github.com/aws/limitless-compatibility-assessment-tool/releases/latest.
+
+For release notes, see the download location above.
+
+## Documentation
+
+The User Guide is here: https://github.com/aws/limitless-compatibility-assessment-tool/blob/main/UserGuide.md
+
+## Security
+
+See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+
+## License
+
+This library is licensed under the MIT-0 License. See the LICENSE file.

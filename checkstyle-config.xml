@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<!--
+  This is a small checkstyle ruleset to get you started.
+  All available rules are documented at http://checkstyle.sourceforge.net/checks.html
+  Consider moving checkstyle rules into a team package to avoid defining them repeatedly and
+  inconsistently.
+-->
+<module name="Checker">
+    <property name="basedir" value="${basedir}"/>
+
+    <!-- Spaces instead of tabs -->
+    <module name="FileTabCharacter"/>
+
+    <!-- Caps line length -->
+    <module name="LineLength">
+        <property name="max" value="140"/>
+        <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+    </module>
+
+    <module name="TreeWalker">
+        <!-- Use String[] foo, not String foo[]. -->
+        <module name="ArrayTypeStyle"/>
+        <!-- Switch statements should have default be the last case -->
+        <module name="DefaultComesLast"/>
+        <!-- Local variables and parameters shouldn't shadow fields -->
+        <module name="HiddenField">
+            <property name="ignoreAbstractMethods" value="true"/>
+            <property name="ignoreConstructorParameter" value="true"/>
+            <property name="ignoreSetter" value="true"/>
+        </module>
+        <module name="IllegalImport">
+            <property name="illegalPkgs"
+                      value="edu.emory.mathcs.backport,
+         org.joda,
+         sun, com.sun"/>
+        </module>
+        <!-- Checks for assignments in subexpressions, such as in String s = Integer.toString(i = 2);.-->
+        <module name="InnerAssignment"/>
+        <!-- Name local variables according to standard Java conventions -->
+        <module name="LocalVariableName">
+            <property name="allowOneCharVarInForLoop" value="true"/>
+        </module>
+        <!-- Don't reassign parameters -->
+        <module name="ParameterAssignment"/>
+        <!-- Force 100L instead of 100l -->
+        <module name="UpperEll"/>
+
+    </module>
+</module>

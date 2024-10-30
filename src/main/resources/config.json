@@ -1,0 +1,678 @@
+{
+  "configuration" : {
+    "16.4": {
+      "extensions": ["apgdbcc","aws_commons","citext","ip4r","pg_stat_statements",
+      "pgcrypto","plpgsql","postgis","unaccent","uuid-ossp","vector"],
+      "index_types": ["HASH","GIST","BTREE","SPGIST","GIN", "BRIN"],
+      "ddl_feature_config": {
+        "create_schema" :
+        {
+          "supported": true
+        },
+        "create_schema_with_elements":
+        {
+          "supported": false,
+          "error_message": "CREATE SCHEMA WITH ELEMENTS is not supported"
+        },
+        "alter_schema_owner_to":
+        {
+          "supported": true
+        },
+        "dummy":
+        {
+          "supported": false,
+          "error_message": "DUMMY is not supported"
+        },
+        "create_extension":
+        {
+          "supported": true
+        },
+        "alter_extension_update_version":
+        {
+          "supported": true
+        },
+        "alter_extension_set_schema":
+        {
+          "supported": true
+        },
+        "alter_extension_add_object":
+        {
+          "supported": false,
+          "error_message": "ALTER EXTENSION ADD OBJECT is not supported"
+        },
+        "alter_extension_drop_object":
+        {
+          "supported": false,
+          "error_message": "ALTER EXTENSION DROP OBJECT is not supported"
+        },
+        "create_access_method":
+        {
+          "supported": false,
+          "error_message": "CREATE ACCESS METHOD is not supported"
+        },
+        "create_aggregate":
+        {
+          "supported": false,
+          "error_message": "CREATE AGGREGATE is not supported"
+        },
+        "create_cast":
+        {
+          "supported": false,
+          "error_message": "CREATE CAST is not supported"
+        },
+        "create_domain":
+        {
+          "supported": false,
+          "error_message": "CREATE DOMAIN is not supported"
+        },
+        "create_foreign_table":
+        {
+          "supported": false,
+          "error_message": "CREATE FOREIGN TABLE is not supported"
+        },
+        "create_materialized_view":
+        {
+          "supported": false,
+          "error_message": "CREATE MATERIALIZED VIEW is not supported"
+        },
+        "create_rule":
+        {
+          "supported": false,
+          "error_message": "CREATE RULE is not supported"
+        },
+        "create_statistics":
+        {
+          "supported": false,
+          "error_message": "CREATE STATISTICS is not supported"
+        },
+        "create_subscription":
+        {
+          "supported": false,
+          "error_message": "CREATE SUBSCRIPTION is not supported"
+        },
+        "create_trigger":
+        {
+          "supported": false,
+          "error_message": "CREATE TRIGGER is not supported"
+        },
+        "alter_subscription":
+        {
+          "supported": false,
+          "error_message": "ALTER SUBSCRIPTION is not supported"
+        },
+        "alter_materialized_view":
+        {
+          "supported": false,
+          "error_message": "ALTER MATERIALIZED VIEW is not supported"
+        },
+        "alter_aggregate_owner_to":
+        {
+          "supported": false,
+          "error_message": "ALTER AGGREGATE OWNER TO is not supported"
+        },
+        "alter_statistics_owner_to":
+        {
+          "supported": false,
+          "error_message": "ALTER STATISTICS OWNER TO is not supported"
+        },
+        "alter_subscription_owner_to":
+        {
+          "supported": false,
+          "error_message": "ALTER SUBSCRIPTION OWNER TO is not supported"
+        },
+        "alter_trigger_depends_on":
+        {
+          "supported": false,
+          "error_message": "ALTER TRIGGER DEPENDS ON is not supported"
+        },
+        "alter_materialized_view_depends_on":
+        {
+          "supported": false,
+          "error_message": "ALTER MATERIALIZED VIEW DEPENDS ON is not supported"
+        },
+        "rename_alter_index":
+        {
+          "supported": false,
+          "error_message": "ALTER INDEX is not supported"
+        },
+        "alter_object_depend_alter_index" :
+        {
+          "supported": false,
+          "error_message": "ALTER INDEX is not supported"
+        },
+        "alter_table_alter_index" :
+        {
+          "supported": false,
+          "error_message": "ALTER INDEX is not supported"
+        },
+        "index_create" :
+        {
+          "supported": true
+        },
+        "index_create_unique" :
+        {
+          "supported": true
+        },
+        "create_table_standard":
+        {
+          "supported": true
+        },
+        "create_table_of_type":
+        {
+          "supported": false,
+          "error_message": "CREATE TABLE OF is not supported"
+        },
+        "create_temporary_table":
+        {
+          "supported": false,
+          "error_message": "CREATE TEMPORARY TABLE is not supported"
+        },
+        "create_table_like":
+        {
+          "supported": false,
+          "error_message": "CREATE TABLE (... LIKE ...) is not supported"
+        },
+        "parameter_on_commit_preserve_rows":
+        {
+          "supported": false,
+          "error_message": "PRESERVE ROWS is not supported"
+        },
+        "parameter_on_commit_delete_rows":
+        {
+          "supported": false,
+          "error_message": "DELETE ROWS is not supported"
+        },
+        "parameter_on_commit_drop":
+        {
+          "supported": false,
+          "error_message": "DROP is not supported"
+        },
+        "parameter_if_not_exists_create_table":
+        {
+          "supported": true
+        },
+        "storage_parameter":
+        {
+          "supported": true
+        },
+        "parameter_partition_by":
+        {
+          "supported": false,
+          "error_message": "PARTITION BY is not supported"
+        },
+        "parameter_tablespace":
+        {
+          "supported": false,
+          "error_message": "TABLESPACE is not supported"
+        },
+        "parameter_inherits":
+        {
+          "supported": false,
+          "error_message": "INHERITS is not supported"
+        },
+        "parameter_using_method":
+        {
+          "supported": false,
+          "error_message": "USING METHOD is not supported"
+        },
+        "type_serial":
+        {
+          "supported": true
+        },
+        "parameter_collate":
+        {
+          "supported": true
+        },
+        "constraint_not_null_standard":
+        {
+          "supported": true
+        },
+        "constraint_null_standard":
+        {
+          "supported": true
+        },
+        "constraint_check_standard":
+        {
+          "supported": true
+        },
+        "constraint_check_expression":
+        {
+          "supported": false,
+          "error_message": "Expression inside CHECK constraint is not supported"
+        },
+        "constraint_generated_stored_standard":
+        {
+          "supported": false,
+          "error_message": "GENERATED STORED is not supported on standard tables"
+        },
+        "constraint_generated_as_identity_standard":
+        {
+          "supported": false,
+          "error_message": "GENERATED AS IDENTITY is not supported on standard tables"
+        },
+        "constraint_unique_standard":
+        {
+          "supported": true
+        },
+        "constraint_primary_key_standard":
+        {
+          "supported": true
+        },
+        "constraint_exclude_standard":
+        {
+          "supported": false,
+          "error_message": "EXCLUDE is not supported on standard tables"
+        },
+        "constraint_deferred_standard":
+        {
+          "supported": false,
+          "error_message": "DEFERRED is not supported on standard tables"
+        },
+		    "create_collation":
+        {
+          "supported": true
+        },
+        "alter_collation_owner_to":
+        {
+          "supported": true
+        },
+        "create_view":
+        {
+          "supported": true
+        },
+        "alter_view_set":
+        {
+          "supported": true
+        },
+        "alter_view_reset":
+        {
+          "supported": true
+        },
+        "alter_view_alter":
+        {
+          "supported": false,
+          "error_message": "ALTER VIEW ALTER OPTION is not supported"
+        },
+        "alter_view_change_owner":
+        {
+          "supported": false,
+          "error_message": "ALTER VIEW CHANGE OWNER is not supported"
+        },
+        "alter_view_change_schema":
+        {
+          "supported": false,
+          "error_message": "ALTER VIEW CHANGE SCHEMA is not supported"
+        },
+        "alter_view_rename":
+        {
+          "supported": false,
+          "error_message": "RENAME VIEW is not supported"
+        },
+        "create_temp_sequence":
+        {
+          "supported": false,
+          "error_message": "CREATE TEMP SEQUENCE is not supported"   
+        },
+        "alter_sequence_owner_to":
+        {
+          "supported": true
+        },
+        "alter_sequence_owned_by":
+        {
+          "supported": true
+        },
+        "create_sequence":
+        {
+          "supported": true
+        },
+        "create_sequence_cycle":
+        {
+          "supported": false,
+          "error_message": "CREATE SEQUENCE CYCLE OR NO CYCLE is not supported"
+        },
+        "create_function":
+        {
+          "supported": true
+        },
+        "alter_function":
+        {
+          "supported": true
+        },
+        "alter_table_add_column_serial_not_null":
+        {
+          "supported": false,
+          "error_message": "ALTER TABLE ADD COLUMN SERIAL NOT NULL is not supported"
+        },
+        "create_policy":
+        {
+          "supported": true
+        },
+        "alter_policy":
+        {
+          "supported": true
+        },
+        "create_operator":
+        {
+          "supported": true
+        },
+        "create_operator_class":
+        {
+          "supported": true
+        },
+        "create_operator_family":
+        {
+          "supported": true
+        },
+        "grant_privilege_on_domain":
+        {
+          "supported": false,
+          "error_message": "GRANT PRIVILEGE ON DOMAIN is not supported"
+        },
+        "grant_privilege_on_language":
+        {
+          "supported": false,
+          "error_message": "GRANT PRIVILEGE ON LANGUAGE is not supported"
+        },
+        "grant_privilege_on_largeobject":
+        {
+          "supported": false,
+          "error_message": "GRANT PRIVILEGE ON LARGEOBJECT is not supported"
+        },
+        "grant_privilege_on_procedure":
+        {
+          "supported": false,
+          "error_message": "GRANT PRIVILEGE ON PROCEDURE is not supported"
+        },
+        "grant_privilege_on_routine":
+        {
+          "supported": false,
+          "error_message": "GRANT PRIVILEGE ON ROUTINE is not supported"
+        },
+        "grant_privilege_on_type":
+        {
+          "supported": false,
+          "error_message": "GRANT PRIVILEGE ON TYPE is not supported"
+        },
+        "grant_privilege_on_fdw":
+        {
+          "supported": false,
+          "error_message": "GRANT PRIVILEGE ON FDW is not supported"
+        },
+        "grant_privilege_on_foreign_server":
+        {
+          "supported": false,
+          "error_message": "GRANT PRIVILEGE ON FOREIGN SERVER is not supported"
+        },
+        "create_type":
+        {
+          "supported": true
+        },
+        "create_type_enum":
+        {
+          "supported": true
+        },
+        "create_type_range":
+        {
+          "supported": false,
+          "error_message": "CREATE TYPE AS RANGE is not supported"
+        },
+        "create_base_type":
+        {
+          "supported": false,
+          "error_message": "ERROR: must be superuser to create a base type"
+        },
+        "alter_type":
+        {
+          "supported": true
+        },
+        "alter_table_standard":
+        {
+          "supported": true
+        },
+        "parameter_if_not_exists_alter_table":
+        {
+          "supported": true
+        },
+        "alter_table_add_column":
+        {
+          "supported": true
+        },
+        "alter_table_drop_column":
+        {
+          "supported": true
+        },
+        "alter_table_column_type":
+        {
+          "supported": true
+        },
+        "alter_table_column_type_using":
+        {
+          "supported": false,
+          "error_message": "COLUMN TYPE USING expression is not supported"
+        },
+        "alter_table_column_default":
+        {
+          "supported": true
+        },
+        "alter_table_column_set_not_null":
+        {
+          "supported": true
+        },
+        "alter_table_column_drop_not_null":
+        {
+          "supported": true
+        },
+        "alter_table_column_drop_expression":
+        {
+          "supported": false,
+          "error_message": "COLUMN DROP EXPRESSION is not supported on standard tables"
+        },
+        "alter_table_column_add_identity":
+        {
+          "supported": false,
+          "error_message": "COLUMN ADD IDENTITY is not supported on standard tables"
+        },
+        "alter_table_column_set_identity":
+        {
+          "supported": false,
+          "error_message": "COLUMN SET IDENTITY is not supported on standard tables"
+        },
+        "alter_table_column_drop_identity":
+        {
+          "supported": false,
+          "error_message": "COLUMN DROP IDENTITY is not supported on standard tables"
+        },
+        "alter_table_column_set_statistics":
+        {
+          "supported": false,
+          "error_message": "COLUMN SET STATISTICS is not supported on standard tables"
+        },
+        "alter_table_column_set_attribute_option":
+        {
+          "supported": false,
+          "error_message": "COLUMN SET ATTRIBUTE OPTION is not supported on standard tables"
+        },
+        "alter_table_column_reset_attribute_option":
+        {
+          "supported": false,
+          "error_message": "COLUMN RESET ATTRIBUTE OPTION is not supported on standard tables"
+        },
+        "alter_table_column_set_storage":
+        {
+          "supported": false,
+          "error_message": "COLUMN SET STORAGE is not supported on standard tables"
+        },
+        "alter_table_column_set_compression":
+        {
+          "supported": false,
+          "error_message": "COLUMN SET COMPRESSION is not supported on standard tables"
+        },
+        "alter_table_add_table_constraint":
+        {
+          "supported": true
+        },
+        "alter_table_alter_constraint":
+        {
+          "supported": false,
+          "error_message": "ALTER CONSTRAINT is not supported on standard tables"
+        },
+        "alter_table_validate_constraint":
+        {
+          "supported": true
+        },
+        "alter_table_drop_constraint":
+        {
+          "supported": true
+        },
+        "alter_table_disable_trigger":
+        {
+          "supported": false,
+          "error_message": "DISABLE TRIGGER is not supported on standard tables"
+        },
+        "alter_table_enable_trigger":
+        {
+          "supported": false,
+          "error_message": "ENABLE TRIGGER is not supported on standard tables"
+        },
+        "alter_table_enable_replica_trigger":
+        {
+          "supported": false,
+          "error_message": "ENABLE REPLICA TRIGGER is not supported on standard tables"
+        },
+        "alter_table_enable_always_trigger":
+        {
+          "supported": false,
+          "error_message": "ENABLE ALWAYS TRIGGER is not supported on standard tables"
+        },
+        "alter_table_disable_rule":
+        {
+          "supported": false,
+          "error_message": "DISABLE RULE is not supported on standard tables"
+        },
+        "alter_table_enable_rule":
+        {
+          "supported": false,
+          "error_message": "ENABLE RULE is not supported on standard tables"
+        },
+        "alter_table_enable_replica_rule":
+        {
+          "supported": false,
+          "error_message": "ENABLE REPLICA RULE is not supported on standard tables"
+        },
+        "alter_table_enable_always_rule":
+        {
+          "supported": false,
+          "error_message": "ENABLE ALWAYS RULE is not supported on standard tables"
+        },
+        "alter_table_row_level_security":
+        {
+          "supported": true
+        },
+        "alter_table_cluster_on_index":
+        {
+          "supported": false,
+          "error_message": "CLUSTER ON INDEX is not supported on standard tables"
+        },
+        "alter_table_set_without_cluster":
+        {
+          "supported": false,
+          "error_message": "SET WITHOUT CLUSTER is not supported on standard tables"
+        },
+        "alter_table_set_without_oids":
+        {
+          "supported": false,
+          "error_message": "SET WITHOUT OIDS is not supported on standard tables"
+        },
+        "alter_table_set_tablespace":
+        {
+          "supported": false,
+          "error_message": "SET TABLESPACE is not supported on standard tables"
+        },
+        "alter_table_set_logged":
+        {
+          "supported": false,
+          "error_message": "SET LOGGED is not supported on standard tables"
+        },
+        "alter_table_set_unlogged":
+        {
+          "supported": false,
+          "error_message": "SET UNLOGGED is not supported on standard tables"
+        },
+        "alter_table_set_options":
+        {
+          "supported": true
+        },
+        "alter_table_reset_options":
+        {
+          "supported": true
+        },
+        "alter_table_inherit":
+        {
+          "supported": false,
+          "error_message": "INHERIT is not supported on standard tables"
+        },
+        "alter_table_no_inherit":
+        {
+          "supported": false,
+          "error_message": "NO INHERIT is not supported on standard tables"
+        },
+        "alter_table_of":
+        {
+          "supported": false,
+          "error_message": "OF is not supported on standard tables"
+        },
+        "alter_table_not_of":
+        {
+          "supported": false,
+          "error_message": "NOT OF is not supported on standard tables"
+        },
+        "alter_table_owner_to":
+        {
+          "supported": true
+        },
+        "alter_table_replica_identity":
+        {
+          "supported": false,
+          "error_message": "REPLICA IDENTITY is not supported on standard tables"
+        },
+        "alter_table_attach_partition":
+        {
+          "supported": false,
+          "error_message": "ATTACH PARTITION is not supported on standard tables"
+        },
+        "alter_table_detach_partition":
+        {
+          "supported": false,
+          "error_message": "DETACH PARTITION is not supported on standard tables"
+        },
+        "alter_table_only":
+        {
+          "supported": false,
+          "error_message": "ALTER TABLE ONLY is not supported"
+        },
+        "alter_table_rename":
+        {
+          "supported": true
+        },
+        "alter_table_set_schema":
+        {
+          "supported": true
+        },
+        "alter_table_rename_column":
+        {
+          "supported": true
+        }
+      }
+    },
+    "16.5": {
+      "inherit_from": "16.4",
+      "extensions": [],
+      "ddl_feature_configs": {
+        "dummy":
+        {
+          "supported": true
+        }
+      }
+    }
+  }
+}

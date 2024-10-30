@@ -1,0 +1,34 @@
+'brazil_package_spec@1.0'
+
+common::{
+    name: "LimitlessAssessmentToolInternal",
+    major_version: "1.0",
+
+    dependencies: {
+        default_closure: run,
+        closures: {
+            run: public::{
+                include: [self]
+            },
+        },
+        build_after: [
+
+        ],
+    },
+
+    build: {
+        command: "run-gradlew",
+
+        outputs: {
+            public_dir: null.string,
+            private_dir: null.string,
+        },
+
+        env: {
+            PATH: [
+                (farm "PeruGradle" "bin"),
+                (env PATH),
+            ],
+        },
+    },
+}

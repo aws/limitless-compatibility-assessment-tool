@@ -1,0 +1,85 @@
+<!doctype html><html><head><title>Limitless CAT Assessment Report</title>
+<meta name="description" content="Limitless CAT Assessment Report">
+<meta name="keywords" content="Limitless CAT Assessment Report"></head><body><pre>
+</head><body><pre>
+--------------------------------------------------------------------------------
+--- Limitless Compatibility Assessment Tool ------------------------------------
+--------------------------------------------------------------------------------
+Limitless Compatibility Tool version: v.1.0, Sept 2024
+Compatibility assessment tool for Aurora Limitless for PostgreSQL
+Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+Notice:
+This report contains an assessment based on the resources you scanned with the
+Limitless Compatibility Assessment tool. The information contained in this report,
+including whether or not a feature is 'supported' or 'not supported', is made
+available 'as is', and may be incomplete, incorrect, and subject to interpretation.
+You should not base decisions on the information in this report without independently
+validating it against the actual SQL/DDL code on which this report is based.
+
+--------------------------------------------------------------------------------
+--- Report Metrics -------------------------------------------------------------
+--------------------------------------------------------------------------------
+Target Aurora PostgreSQL Limitless version: 16.4
+Input file: databasedump.sql
+Output directory: /workplace/assessmentoutput
+Report location:  /workplace/assessmentoutput/
+Report_LimitlessCompatibilityAssessment_2024_Oct_08_22.01.56.html
+Run start            : 2024-Oct-08 22:01:56
+Run end              : 2024-Oct-08 22:01:56
+Run time             : 00:00:00.281
+
+<a name="execsumm"></a>--------------------------------------------------------------------------------
+--- Executive Summary for Limitless CAT ----------------------------------------
+--------------------------------------------------------------------------------
+Total number of lines parsed: 3
+Total SQLs parsed: 3
+
+Total SQLs supported by APG Limitless: 2
+Total SQLs unsupported by APG Limitless: 1
+Unable to process: 0
+Manual review: 
+
+<a name="toc"></a>--------------------------------------------------------------------------------
+--- Table Of Contents ----------------------------------------------------------
+--------------------------------------------------------------------------------
+<a href="#execsumm">Executive Summary for Limitless CAT</a>
+<a href="#objects_supported">SQL features 'Supported' in Limitless</a>
+<a href="#objects_unsupported">SQL features 'Not Supported' in Limitless</a>
+<a href="#unable_process">Unable to process</a>
+<a href="#manual">Manual review</a>
+
+
+<a name="objects_supported"></a>--------------------------------------------------------------------------------
+--- SQL features 'Supported' in Limitless --------------------------------------
+--------------------------------------------------------------------------------
+create schema tester;
+
+create extension vector;
+
+<a href="#toc">Back to Table of Contents</a>
+
+<a name="objects_unsupported"></a>--------------------------------------------------------------------------------
+--- SQL features 'Not Supported' in Limitless ----------------------------------
+--------------------------------------------------------------------------------
+create extension abc;
+	- Extension abc is not supported
+
+<a href="#toc">Back to Table of Contents</a>
+
+<a name="unable_process"></a>--------------------------------------------------------------------------------
+--- Unable to process ----------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+<a href="#toc">Back to Table of Contents</a>
+
+<a name="manual"></a>--------------------------------------------------------------------------------
+--- Manual review --------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+<a href="#toc">Back to Table of Contents</a>
+
+
+</pre></body></html>
