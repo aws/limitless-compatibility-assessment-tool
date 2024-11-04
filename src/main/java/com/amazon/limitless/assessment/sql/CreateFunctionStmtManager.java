@@ -126,7 +126,7 @@ public class CreateFunctionStmtManager extends PostgreSqlStmtBaseManager impleme
 
         // TODO(chsaikia@): Store a map of function name to volatility
         // TODO(chsaikia@): Parse function body
-        parseFunctionBody(functionBody.toString());
+        // parseFunctionBody(functionBody.toString());
         result.setFeature(featureConfig);
         resultList.add(result);
         return resultList;
