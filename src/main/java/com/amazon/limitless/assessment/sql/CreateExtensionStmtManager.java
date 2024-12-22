@@ -11,6 +11,7 @@ import com.amazon.limitless.parser.postgresql.PostgreSQLParser;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class CreateExtensionStmtManager extends PostgreSqlStmtBaseManager implements SqlStatementManager<PostgreSQLParser.CreateextensionstmtContext> {
     
@@ -22,8 +23,22 @@ public class CreateExtensionStmtManager extends PostgreSqlStmtBaseManager implem
     public List<StatementResult> analyzeStatement(PostgreSQLParser.CreateextensionstmtContext ctx) {
         StatementResult result = new StatementResult();
         resultList = new ArrayList<>();
-        String extensionName = ctx.name().colid().identifier().Identifier().getText().trim();
+        String extensionName = Optional.ofNullable(ctx)
+            .map(context -> context.name())
+            .map(nameContext -> nameContext.colid())
+            .map(colidContext -> colidContext.identifier())
+            .map(identifierContext -> identifierContext.Identifier())
+            .map(token -> token.getText())
+            .map(text -> text.trim())
+            .orElse("");
         Feature featureConfig = configLoader.getFeatureConfig("create_extension");
+
+        if (extensionName.isEmpty()) {
+            featureConfig = new Feature("", false, "Could not process create extension statement");
+            result.setFeature(featureConfig);
+            resultList.add(result);
+            return resultList;
+        }
 
         // Check if the extension is supported or not
         boolean isSupportedExtension = configLoader.isSupportedExtension(extensionName);

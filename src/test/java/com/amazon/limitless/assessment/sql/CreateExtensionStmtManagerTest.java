@@ -84,4 +84,63 @@ public class CreateExtensionStmtManagerTest {
         assertFalse(result.getFeature().isSupported());
         assertEquals(feature.getErrorMessage(), result.getFeature().getErrorMessage());
     }
+
+    @Test
+    public void test_createExtension_withNullContext() {
+        List<StatementResult> resultList = manager.analyzeStatement(null);
+        assertEquals(1, resultList.size());
+        StatementResult result = resultList.get(0);
+        assertFalse(result.getFeature().isSupported());
+        assertEquals("Could not process create extension statement", result.getFeature().getErrorMessage());
+    }
+
+    @Test
+    public void test_createExtension_withNullName() {
+        when(ctx.name()).thenReturn(null);
+        
+        List<StatementResult> resultList = manager.analyzeStatement(ctx);
+        assertEquals(1, resultList.size());
+        StatementResult result = resultList.get(0);
+        assertFalse(result.getFeature().isSupported());
+        assertEquals("Could not process create extension statement", result.getFeature().getErrorMessage());
+    }
+
+    @Test
+    public void test_createExtension_withNullColid() {
+        when(ctx.name()).thenReturn(nameCtx);
+        when(nameCtx.colid()).thenReturn(null);
+        
+        List<StatementResult> resultList = manager.analyzeStatement(ctx);
+        assertEquals(1, resultList.size());
+        StatementResult result = resultList.get(0);
+        assertFalse(result.getFeature().isSupported());
+        assertEquals("Could not process create extension statement", result.getFeature().getErrorMessage());
+    }
+
+    @Test
+    public void test_createExtension_withNullIdentifier() {
+        when(ctx.name()).thenReturn(nameCtx);
+        when(nameCtx.colid()).thenReturn(colidCtx);
+        when(colidCtx.identifier()).thenReturn(null);
+        
+        List<StatementResult> resultList = manager.analyzeStatement(ctx);
+        assertEquals(1, resultList.size());
+        StatementResult result = resultList.get(0);
+        assertFalse(result.getFeature().isSupported());
+        assertEquals("Could not process create extension statement", result.getFeature().getErrorMessage());
+    }
+
+    @Test
+    public void test_createExtension_withNullIdentifierToken() {
+        when(ctx.name()).thenReturn(nameCtx);
+        when(nameCtx.colid()).thenReturn(colidCtx);
+        when(colidCtx.identifier()).thenReturn(identifierCtx);
+        when(identifierCtx.Identifier()).thenReturn(null);
+        
+        List<StatementResult> resultList = manager.analyzeStatement(ctx);
+        assertEquals(1, resultList.size());
+        StatementResult result = resultList.get(0);
+        assertFalse(result.getFeature().isSupported());
+        assertEquals("Could not process create extension statement", result.getFeature().getErrorMessage());
+    }
 }
