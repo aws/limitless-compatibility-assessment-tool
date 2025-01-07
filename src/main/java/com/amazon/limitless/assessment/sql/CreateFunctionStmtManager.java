@@ -166,11 +166,11 @@ public class CreateFunctionStmtManager extends PostgreSqlStmtBaseManager impleme
 
     public ObjectName getObjectName(PostgreSQLParser.CreatefunctionstmtContext ctx)
     {
-        String namespace = ctx.func_name().colid().getText();
-        if (ctx.func_name().indirection().indirection_el() != null) {
-            String objectName = ctx.func_name().indirection().indirection_el(0).attr_name().getText();
-            return new ObjectName(namespace, objectName);
+        String objectName = ctx.func_name().getText();
+        if (ctx.func_name().colid() != null) {
+            String namespace = ctx.func_name().colid().getText();
+            return new ObjectName(objectName, namespace);
         }
-        return new ObjectName(namespace);
+        return new ObjectName(objectName);
     }
 }
